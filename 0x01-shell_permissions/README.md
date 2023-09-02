@@ -1,5 +1,7 @@
 # 0x01. Shell, permissions
 
+## A README.md file describing what each script is doing
+
 0. My name is Betty - [0-iam_betty](./0-iam_betty) - A script that switches the current user to the user betty.
 
 1. Who am I - [1-who_am_i](./1-who_am_i) - A script that prints the effective username of the current user.
