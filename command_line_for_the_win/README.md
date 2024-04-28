@@ -81,7 +81,10 @@ Once we have our jpg, and png files, we will then run this command to upload the
 ```
 sftp> put 0-first_9_tasks.jpg
 ```
-Until you are done uploading...
+```
+sftp> put 0-first_9_tasks.png
+```
+Until you are done uploading each file...
 
 Once upload is completed, locate the files using your SSH, move to appropriate folder, Git add, Git commit and Git push.
 
