@@ -34,10 +34,9 @@ We can navigate through the working directory with this command
 ```
 sftp> pwd
 ```
-`
-Output
-Remote working directory: /home/montybasquiart
-`
+> Output
+> Remote working directory: /home/montybasquiart
+
 We can view the contents of the current direct of the remote system with
 ```
 sftp> ls
