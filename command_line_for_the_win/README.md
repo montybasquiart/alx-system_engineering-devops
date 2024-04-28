@@ -44,13 +44,13 @@ We can list the contents of the working directory
 ```
 sftp> lls
 ```
----
+
 __Output__
 
-Deskop	0-first_9_tasks.jpg	0-first_9_tasks.png	1-next_9_tasks.jpg
+> Deskop	0-first_9_tasks.jpg	0-first_9_tasks.png	1-next_9_tasks.jpg
 
 1-next_9_tasks.jpg		2-next_9_tasks.jpg	2-next_9_tasks.png
----
+
 We can change the working directory with
 ```
 sftp> lcd Desktop
