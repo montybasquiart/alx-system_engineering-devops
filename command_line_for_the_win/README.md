@@ -1,24 +1,18 @@
 # Command line for the win
 
-## A README file describing the the steps followed to use the SFTP command-line
+## A README file describing the steps followed to use the SFTP command-line
 
-1.  STFP which stands for **Secure File Transfer Protocol** is a protocol built\
-into SSH that can implement FTP commands over secure connection, securely acces-\
-sing, transferring and managing large files and sensitive data.
-In cases where you need to decide which protocol to use, SFTP is always prefer-\
-able to FTP because of its underlying security features to ride on an SSH\
-connection.
+   STFP which stands for **Secure File Transfer Protocol** is a protocol built into SSH that can implement FTP commands over secure connection, securely accessing, transferring and managing large files and sensitive data.
+In cases where you need to decide which protocol to use, SFTP is always preferable to FTP because of its underlying security features to ride on an SSH connection.
 
 ## How to Use the SFTP Command-line
-If you can establish connection to the machine using SSH, then you have\
-completed all of the necessary requirements necessary to use SFTP to manage\
-files.
+If you can establish connection to the machine using SSH, then you have completed all of the necessary requirements necessary to use SFTP to manage files.
 
 Enter your SSH Key
 ```
 $ ssh montybasquiart@alx_server
 ```
-Once you are able to connect that, it will require your password (key)
+Once you are able to connect, it will require your password (key)
 ```
 montybasquiart@alx_server password:
 ```
@@ -28,11 +22,10 @@ your SFTP Key like we did earlier with the SSH
 ```
 $ sftp montybasquiart@alx_server
 ```
-You will connect the remote system and it will prompt you for your password
-This will then connect you to the remote system.
+You will connect the remote system and it will prompt you for password. This will then connect you to the remote system.
 ## Navigating with SFTP
-A helful tip before we deep dive
-This will list all commands within the remote system
+A helful tip before we deep dive:
+This command below will list commands within the remote system
 ```
 sftp> ? or help
 ```
@@ -41,10 +34,12 @@ We can navigate through the working directory with this command
 ```
 sftp> pwd
 ```
----
+```
+{
 Output
 Remote working directory: /home/montybasquiart
----
+}
+```
 We can view the contents of the current direct of the remote system with
 ```
 sftp> ls
@@ -94,7 +89,6 @@ them to our remote system.
 sftp> put 0-first_9_tasks.jpg
 ```
 Until you are done uploading...
-Once uplaod is completed, locate the files using your SSH, move to appropriate\
-folder, Git add, Git commit and Git push.
+Once uplaod is completed, locate the files using your SSH, move to appropriate folder, Git add, Git commit and Git push.
 
 # Ciao!
