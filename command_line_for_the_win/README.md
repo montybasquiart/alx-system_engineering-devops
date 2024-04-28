@@ -34,8 +34,7 @@ We can navigate through the working directory with this command
 ```
 sftp> pwd
 ```
-```
-	sftp>
+```sftp>
 Output
 Remote working directory: /home/montybasquiart
 ```
