@@ -1,7 +1,29 @@
 #!/usr/bin/env bash
-# Install and setup Nginx web server
+# Webservers are used to serve web pages and applications. 
+# Nginx is a popular web server that is used to serve web pages and applications. 
+# Listens on port 80 by default.
+# https://www.nginx.com/
+# Returns the page containing "Hello World!" when accessed.
+# at the root with a curl GET request.
+# Lets go ahead and install Nginx.
+
 sudo apt-get update
 sudo apt-get install nginx -y
 sudo ufw allow 'Nginx HTTP'
-echo "Hello World!" | sudo tee /var/www/html/index.html
-service nginx start
+
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chown -R "$USER":"$USER" /var/www/html/site-available/default
+
+touch /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
+
+echo "server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html;
+
+}" > /etc/nginx/sites-available/default
+
+sudo service nginx restart
