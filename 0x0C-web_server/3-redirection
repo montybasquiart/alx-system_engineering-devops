@@ -5,6 +5,7 @@
 
 sudo apt-get update
 sudo apt-get install nginx -y
+sudo ufw allow 'Nginx HTTP'
 
 sudo chown -R "$USER:$USER" /var/ww/html
 sudo Chown -R "$USER:$USER" /etc/nginx/sites-available
