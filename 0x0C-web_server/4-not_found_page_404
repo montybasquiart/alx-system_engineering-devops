@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Configure Nginx server to have 404 page that contains the string "Ceci n'est pas une page".
+# Page returns an HTTP status code 404.
+# The page must contain 3-redirection, write 4-not_found_page_404 so that it configures a brand new Ubuntu server.
+
+sudo apt-get update
+sudo apt-get install nginx -y
+echo "Ceci n'\''est pas une page" | sudo tee /var/www/html/404.html
+
+echo "server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    error_page 404 /404.html;
+    location = /404.html {
+        root /var/www/html;
+        internal;
+    }
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}" | sudo tee /etc/nginx/sites-available/default
+
+sudo service nginx restart
