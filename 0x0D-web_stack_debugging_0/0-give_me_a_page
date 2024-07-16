@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script fixes the apache2 server when you curl the port 80 and it returns a 404 error
+# This script is for Ubuntu 14.04 LTS
+# curl: (52) Empty reply from server
+# The script will install apache2 and start the service
+
+sudo service apache2 start
