@@ -6,7 +6,6 @@
 
 sudo apt-get update
 sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
 
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
@@ -15,7 +14,7 @@ touch /etc/nginx/html/404.html
 echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
 
 printf %s "server {
-     listen      80 default_server;
+     listen      80;
      listen      [::]:80 default_server;
      root        /etc/nginx/html;
      index       index.html index.htm;
