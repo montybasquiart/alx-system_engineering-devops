@@ -11,11 +11,8 @@ sudo ufw allow 'Nginx HTTP'
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Holberton School" > /etc/nginx/html/index.html
-touch /var/www/html/404.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-
-sudo chown -R "$USER:$USER" /var/www/html
-sudo chown -R "$USER:$USER" /etc/nginx/sites-available/default
+touch /etc/nginx/html/404.html
+echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
 
 printf %s "server {
      listen      80 default_server;
