@@ -8,16 +8,16 @@ sudo apt-get update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 
-sudo chown -R "$USER:$USER" /var/www/html
-sudo chown -R "$USER:$USER" /etc/nginx/sites-available/default
-
-touch /var/www/html/index.html
-echo 'Hello World!' > /var/www/html/index.html
-
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
+echo "Holberton School" > /etc/nginx/html/index.html
 touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-echo "server {
+sudo chown -R "$USER:$USER" /var/www/html
+sudo chown -R "$USER:$USER" /etc/nginx/sites-available/default
+
+printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;
      root        /var/www/html;
