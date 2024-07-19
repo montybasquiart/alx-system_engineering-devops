@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # Create a custom HTTP header response with puppet
 
 exec { 'HTTP header':
