@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy on your lb-01 server.
+# Configure HAproxy so that it send traffic to web-01 and web-02
+# Distribute requests using a roundrobin algorithm
+
+sudo apt-get update
+sudo apt-get install haproxy -y
+
+sudo chown -R "$USER":"$USER" /etc/haproxy/haproxy.cfg
+echo "frontend montybasquiart
+    bind *:80
+    mode http
+    default_backend montybasquiart_app
+
+backend montybasquiart_app
+    balance roundrobin
+    server 483226-web-01 54.157.156.223:80 check
+    server 483226-web-02 54.87.206.34:80 check" >> /ect/haproxy/haproxy.cfg
+
+sudo service haproxy restart
