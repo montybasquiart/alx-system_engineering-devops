@@ -1,17 +1,17 @@
-# Create a custom HTTP header response with puppet
+# Create a custom HTTP header
 
 exec { 'HTTP header':
         command => '/usr/bin/apt-get update',
 }
 
 package { 'nginx':
-        ensure => present,
+        ensure => installed,
 }
 
-file_line { 'add_header':
+file_line { 'add_header_served_by':
         path => '/etc/nginx/sites-available/default',
-        match => 'server_name _;',
-        line  => "server {\n\tadd_header X-Served-By \"${hostname}\";\n",
+        match => '^server {',
+        line  => "server {\n\tadd_header X-Served-By \"${hostname}\";",
         multiple => false,
 }
 
