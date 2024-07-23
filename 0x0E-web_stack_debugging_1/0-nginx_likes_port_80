@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Nginx to listens on port 80
+#Nginx listens on port 80
 
 cat /etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
-sudo systemctl nginx restart
+sudo service nginx restart
