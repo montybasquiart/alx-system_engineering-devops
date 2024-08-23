@@ -1,0 +1,15 @@
+echo "updating Packages and Installing Requirements"
+
+# Update Package Manager
+sudo apt-get update
+sudo -apt-get install -y nginx
+# Install pip
+sudo apt-get install -y nginx
+# install flask, flask_cors, sqlalchemy Using pip
+pip install flask
+pip install flask_cors
+pip install sqlalchemy
+# Install net-tools
+sudo apt-get install -y net-tools
+# Install Gunicorn
+sudo apt-get install -y gunicorn
