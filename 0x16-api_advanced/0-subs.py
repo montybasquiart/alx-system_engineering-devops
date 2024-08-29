@@ -1,30 +1,34 @@
 #!/usr/bin/python3
 """
-Module to fetch the number of subscribers for a given subreddit.
+Module to fetch and print the titles of the first 10 hot posts
+listed for a given subreddit.
 """
 
 import requests
 
 
-def number_of_subscribers(subreddit):
+def top_ten(subreddit):
     """
-    Retrieves the number of subscribers for a given subreddit
+    Queries the Reddit API and prints the titles of the first 10 hot posts
+    listed for a given subreddit.
 
     Args:
         subreddit (str): The name of the subreddit.
 
     Returns:
-        int: The number of subscribers, or 0 if an error occurs.
+        None
     """
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {"User-Agent": "MyCustomUserAgent/1.0"}
 
     try:
         response = requests.get(url, allow_redirects=False, headers=headers)
         if response.status_code == 200:
             data = response.json()
-            return data.get("data", {}).get("subscribers", 0)
+            posts = data.get("data", {}).get("children", [])
+            for post in posts:
+                print(post.get("data", {}).get("title"))
         else:
-            return 0
+            print(None)
     except requests.RequestException:
-        return 0
+        print(None)
